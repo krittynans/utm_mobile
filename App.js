@@ -8,10 +8,9 @@
 
 import React from 'react';
 import AppLoading from 'expo-app-loading';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import type {Node} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -24,47 +23,7 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import Screens from './navigation/Screens';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
 const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
     // <SafeAreaView style={backgroundStyle}>
     //   {/*<StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />*/}
@@ -91,12 +50,13 @@ const App: () => Node = () => {
     //   {/*  </View>*/}
     //   {/*</ScrollView>*/}
     // </SafeAreaView>
-    <ScrollView contentInsetAdjustmentBehavior="automatic">
+    // <ScrollView contentInsetAdjustmentBehavior="automatic">
+    <SafeAreaProvider>
       <NavigationContainer>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <Screens />
       </NavigationContainer>
-    </ScrollView>
+    </SafeAreaProvider>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, StatusBar, Dimensions} from 'react-native';
-import {Block, Button, Text, theme} from 'galio-framework';
+import {Block, Button, Icon, Text, theme} from 'galio-framework';
 
 const {height, width} = Dimensions.get('screen');
 
@@ -67,5 +67,12 @@ const styles = StyleSheet.create({
     height: theme.SIZES.BASE * 3,
     shadowRadius: 0,
     shadowOpacity: 0,
+  },
+  shadow: {
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 4,
+    shadowOpacity: 0.2,
+    elevation: 2,
   },
 });
