@@ -9,8 +9,10 @@ import {
   ScrollView,
   SafeAreaView,
   FlatList,
+  TouchableOpacity,
 } from 'react-native';
 import {Select, MultiSelect} from '../components/';
+import Modal from 'react-native-modal';
 
 const InsItems = [
   {
@@ -107,6 +109,11 @@ const NDTItems = [
 ];
 
 const Information = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleFirstModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   const Views = [
     {
       id: 'industrySection',
@@ -123,40 +130,46 @@ const Information = () => {
   return (
     <SafeAreaView style={[styles.container, {flexDirection: 'column'}]}>
       <View style={{flex: 1, alignItems: 'flex-start'}}>
-        <ScrollView nestedScrollEnabled={true}>
-          <FlatList
-            data={Views}
-            renderItem={({item, index}) => (
-              <View
-                key={index}
-                style={(styles.firstContainer, {zIndex: 99 - index})}>
-                <MultiSelect selectedTitle={item.title} items={item.item} />
+        <Button title="Show Task 1 modal" onPress={toggleFirstModal} />
+        <Modal propagateSwipe={true} isVisible={isModalVisible}>
+          <View style={{flex: 1}}>
+            <ScrollView nestedScrollEnabled={true}>
+              <FlatList
+                data={Views}
+                renderItem={({item, index}) => (
+                  <View
+                    key={index}
+                    style={(styles.firstContainer, {zIndex: 99 - index})}>
+                    <MultiSelect selectedTitle={item.title} items={item.item} />
+                  </View>
+                )}
+              />
+              <View>
+                <Text style={styles.titleText}>What's your job title?</Text>
+                <TextInput
+                  style={styles.inputStyle}
+                  placeholder={"What's your job title?"}
+                />
               </View>
-            )}
-          />
-          <View>
-            <Text style={styles.titleText}>What's your job title?</Text>
-            <TextInput
-              style={styles.inputStyle}
-              placeholder={"What's your job title?"}
-            />
+              <View>
+                <Text style={styles.titleText}>What's your team size?</Text>
+                <Select
+                  defaultIndex={1}
+                  options={[
+                    '1',
+                    '2-10',
+                    '10-30',
+                    '30-60',
+                    '60-100',
+                    'More than 100',
+                  ]}
+                  style={styles.selectStyle}
+                />
+              </View>
+            </ScrollView>
+            <Button title="Hide modal" onPress={toggleFirstModal} />
           </View>
-          <View>
-            <Text style={styles.titleText}>What's your team size?</Text>
-            <Select
-              defaultIndex={1}
-              options={[
-                '1',
-                '2-10',
-                '10-30',
-                '30-60',
-                '60-100',
-                'More than 100',
-              ]}
-              style={styles.selectStyle}
-            />
-          </View>
-        </ScrollView>
+        </Modal>
       </View>
     </SafeAreaView>
   );
