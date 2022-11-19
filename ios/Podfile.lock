@@ -328,6 +328,10 @@ PODS:
     - React-Core
   - react-native-get-random-values (1.8.0):
     - React-Core
+  - react-native-html-to-pdf (0.12.0):
+    - React-Core
+  - react-native-image-generator (0.3.1):
+    - React-Core
   - react-native-image-picker (4.10.0):
     - React-Core
   - react-native-menu (0.5.3):
@@ -470,8 +474,6 @@ PODS:
   - RNScreens (3.6.0):
     - React-Core
     - React-RCTImage
-  - RNVectorIcons (9.2.0):
-    - React-Core
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -507,6 +509,8 @@ DEPENDENCIES:
   - react-native-blob-util (from `../node_modules/react-native-blob-util`)
   - react-native-document-picker (from `../node_modules/react-native-document-picker`)
   - react-native-get-random-values (from `../node_modules/react-native-get-random-values`)
+  - react-native-html-to-pdf (from `../node_modules/react-native-html-to-pdf`)
+  - react-native-image-generator (from `../node_modules/react-native-image-generator`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - "react-native-menu (from `../node_modules/@react-native-menu/menu`)"
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
@@ -540,7 +544,6 @@ DEPENDENCIES:
   - "RNNotifee (from `../node_modules/@notifee/react-native`)"
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
-  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -602,6 +605,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-document-picker"
   react-native-get-random-values:
     :path: "../node_modules/react-native-get-random-values"
+  react-native-html-to-pdf:
+    :path: "../node_modules/react-native-html-to-pdf"
+  react-native-image-generator:
+    :path: "../node_modules/react-native-image-generator"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
   react-native-menu:
@@ -668,8 +675,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
-  RNVectorIcons:
-    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -706,6 +711,8 @@ SPEC CHECKSUMS:
   react-native-blob-util: 4ec16cc21bfc8de8f0ddfd2c81ada00f8c34b646
   react-native-document-picker: f5ec1a712ca2a975c233117f044817bb8393cad4
   react-native-get-random-values: a6ea6a8a65dc93e96e24a11105b1a9c8cfe1d72a
+  react-native-html-to-pdf: 4c5c6e26819fe202971061594058877aa9b25265
+  react-native-image-generator: fdbf5671bd21c5af3ac9ab439888119064cd2ae3
   react-native-image-picker: 4bc9ed38c8be255b515d8c88babbaf74973f91a8
   react-native-menu: 9edb6f68924cad8fc62dbd8f03f658d8499bb968
   react-native-netinfo: 85b2a435c4d3705c08b0c42ff2d6ef6b9622ea0a
@@ -739,7 +746,6 @@ SPEC CHECKSUMS:
   RNNotifee: 5155e0a5e0a97d0c839030d8192783cd63053999
   RNReanimated: 9d427a9ce413b70556469f2854c184895b5a3c9c
   RNScreens: eb0dfb2d6b21d2d7f980ad46b14eb306d2f1062e
-  RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
   Yoga: 99652481fcd320aefa4a7ef90095b95acd181952
